@@ -17,7 +17,19 @@ class Linked_List:
         self.head = None
 
 
-    def insert_at_beginning(self, data: int) -> None:
+    def print(self) -> None:
+        """Prints the linked list"""
+        current_node = self.head
+
+        if current_node is None:
+            print("Linked List is empty")
+            return
+        while current_node != None:
+            print(current_node.data)
+            current_node = current_node.next
+
+
+    def insertAtBeginning(self, data: int) -> None:
         """
         Inserts a new node with the given data at the beginning of the linked list.
 
@@ -70,7 +82,7 @@ class Linked_List:
         current_node = self.head
 
         if self.head is None:
-            head = new_node
+            self.head = new_node
         else:
             while (current_node.next is not None):
                 current_node = current_node.next
@@ -110,3 +122,16 @@ class Linked_List:
             del temp
         else:
             print("Cannot remove the first node as the list is empty.")
+
+
+# create a new linked list
+llist = Linked_List()
+
+# add nodes to the linked list
+llist.insertAtEnd('a')
+llist.insertAtEnd('b')
+llist.insertAtBeginning('c')
+llist.insertAtEnd('d')
+llist.insertAtIndex('g', 2)
+llist.print()
+
