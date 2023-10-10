@@ -122,16 +122,3 @@ class Linked_List:
             del temp
         else:
             print("Cannot remove the first node as the list is empty.")
-
-
-# create a new linked list
-llist = Linked_List()
-
-# add nodes to the linked list
-llist.insertAtEnd('a')
-llist.insertAtEnd('b')
-llist.insertAtBeginning('c')
-llist.insertAtEnd('d')
-llist.insertAtIndex('g', 2)
-llist.print()
-
