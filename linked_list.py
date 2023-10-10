@@ -32,6 +32,7 @@ class Linked_List:
             new_node.next = self.head
             self.head = new_node
 
+
     def insertAtIndex(self, data: int, index: int) -> None:
         """
         Inserts a new node with the given data at the specified index in the linked list.
@@ -77,6 +78,13 @@ class Linked_List:
 
 
     def updateNode(self, new_data: int, index: int):
+        """
+        Updates the data of a node at a specified index in the linked list.
+
+        Args:
+            new_data (int): The new data.
+            index (int): The index of the node.
+        """
         current_node = self.head
         position = 0
 
@@ -91,3 +99,14 @@ class Linked_List:
                 print("Index out of range")
             else:
                 current_node.data = new_data
+
+
+
+    def remove_first_node(self):
+        """Deletes the first node in the linked list"""
+        if (self.head):
+            temp = self.head
+            self.head = self.head.next
+            del temp
+        else:
+            print("Cannot remove the first node as the list is empty.")
