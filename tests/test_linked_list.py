@@ -17,7 +17,7 @@ class TestLinked_List(unittest.TestCase):
         """Reset the state of the linked list after each test"""
         self.linked_list = None
 
-    def test_insert_at_beginning(self) -> None:
+    def test_insertAtBeginning(self) -> None:
         """Test inserting a node at the beginning of the linked list.
 
         - First, insert a node in an empty list and assert the expected behavior.
@@ -26,24 +26,24 @@ class TestLinked_List(unittest.TestCase):
         """
         # first insert in list
         data = 42
-        self.linked_list.insert_at_beginning(data)
+        self.linked_list.insertAtBeginning(data)
         self.assertEqual(self.linked_list.head.data, data)
         self.assertIsNone(self.linked_list.head.next)
 
         # second insert in list
         data = 95
-        self.linked_list.insert_at_beginning(data)
+        self.linked_list.insertAtBeginning(data)
         self.assertEqual(self.linked_list.head.data, data)
 
         # third insert in list
         data = 55
-        self.linked_list.insert_at_beginning(data)
+        self.linked_list.insertAtBeginning(data)
         self.assertEqual(self.linked_list.head.data, data)
 
 
     def test_insertAtIndex(self) -> None:
         """Test inserting a new node at a specified index in the linked list."""
-        self.test_insert_at_beginning()
+        self.test_insertAtBeginning()
         index, data = 2, 101
         self.linked_list.insertAtIndex(data, index)
 
