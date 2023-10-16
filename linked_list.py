@@ -122,3 +122,18 @@ class Linked_List:
             del temp
         else:
             print("Cannot remove the first node as the list is empty.")
+
+
+    def remove_first_node(self):
+        """Deletes the last node in the linked list"""
+        current_node = self.head
+    
+        if (current_node):
+            while current_node.next.next:
+                current_node = current_node.next
+            del current_node.next
+            current_node.next = None
+        else:
+            print("Cannot remove the last node as the list is empty.")
+
+

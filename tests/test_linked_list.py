@@ -51,6 +51,16 @@ class TestLinked_List(unittest.TestCase):
         self.assertEqual(current_node.data, data)
 
 
+    def test_insertAtEnd(self) -> None:
+        """Test inserting a new node at the end of the linked list."""
+        self.test_insertAtBeginning()
+        index, data = 3, -5
+        self.linked_list.insertAtEnd(data)
+
+        current_node = self.getposition(index)
+        self.assertEqual(current_node.data, data)
+
+
     def getposition(self, index:int) -> Node:
         """
         Get the node at a specified index in the linked list.
@@ -67,6 +77,8 @@ class TestLinked_List(unittest.TestCase):
             current_node = current_node.next
             position += 1
         return current_node
+
+
 
 
 if __name__ == '__main__':
