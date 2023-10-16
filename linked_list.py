@@ -53,12 +53,17 @@ class Linked_List:
             data (int): The data to be stored in the new node.
             index (int): The index at which the new node should be inserted.
         """
+
+        if index < 0:
+            raise IndexError("Index out of range (negative index)")
+            return
+
         new_node = Node(data)
         current_node = self.head
         position = 0
 
         if position is index:
-            self.insert_at_beginning(data)
+            self.insertAtBeginning(data)
         else:
             while current_node and position != index - 1:
                 current_node = current_node.next
@@ -97,13 +102,17 @@ class Linked_List:
             new_data (int): The new data.
             index (int): The index of the node.
         """
+        if index < 0:
+            raise IndexError("Index out of range (negative index)")
+            return        
+
         current_node = self.head
         position = 0
 
-        if position is index:
+        if position == index:
             current_node.data = new_data
         else:
-            while current_node and position != index - 1:
+            while current_node and position != index:
                 current_node = current_node.next
                 position += 1
 
@@ -124,7 +133,7 @@ class Linked_List:
             print("Cannot remove the first node as the list is empty.")
 
 
-    def remove_first_node(self):
+    def remove_last_node(self):
         """Deletes the last node in the linked list"""
         current_node = self.head
     
